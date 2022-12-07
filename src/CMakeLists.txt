@@ -25,7 +25,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 # find_package(JUCE CONFIG REQUIRED)        # If you've installed JUCE to your system
 # or
-add_subdirectory("/Applications/JUCE" JUCE)                    # If you've put JUCE in a subdirectory called JUCE
+add_subdirectory("/home/marc/SDKs/JUCE" JUCE)                    # If you've put JUCE in a subdirectory called JUCE
 
 # If you are building a VST2 or AAX plugin, CMake needs to be told where to find these SDKs on your
 # system. This setup should be done before calling `juce_add_plugin`.
@@ -53,7 +53,8 @@ juce_add_plugin(SimplePluginGUI
     PLUGIN_MANUFACTURER_CODE Juce               # A four-character manufacturer id with at least one upper-case character
     PLUGIN_CODE Gui0                            # A unique four-character plugin id with exactly one upper-case character
                                                 # GarageBand 10.3 requires the first letter to be upper-case, and the remaining letters to be lower-case
-    FORMATS VST3                  # The formats to build. Other valid formats are: AAX Unity VST AU AUv3 Standalone
+    FORMATS LV2                  # The formats to build. Other valid formats are: AAX Unity VST AU AUv3 Standalone
+    LV2URI                      "https://www.github.com/plugins/simple_plugin_gui"
     PRODUCT_NAME "Simple Plugin GUI")        # The name of the final executable, which can differ from the target name
 
 # `juce_generate_juce_header` will create a JuceHeader.h for a given target, which will be generated

@@ -62,5 +62,5 @@ private:
 
     juce::Point<int> editorSize = {522, 348};
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(SimplePluginAudioProcessor)
+    JUCE_HEAVYWEIGHT_LEAK_DETECTOR(SimplePluginAudioProcessor)
 };
